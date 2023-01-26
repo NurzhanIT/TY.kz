@@ -1,5 +1,6 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
-import service
+
 from django.contrib.postgres.fields import ArrayField
 
 STATUS_CHOICES = [
@@ -8,14 +9,15 @@ STATUS_CHOICES = [
 ]
 
 
-class User(models.Model):
+class User(AbstractUser):
     userId = models.CharField(primary_key=True)
-    name = models.CharField()
-    surname = models.CharField()
-    password = models.CharField()
+    # name = models.CharField()
+    # surname = models.CharField()
+    # password = models.CharField()
     status = models.CharField(choices=STATUS_CHOICES, default='1')
     avatar = models.ImageField(name='Avatar')
     city = models.CharField()
+
     # zapisi=models.CharField()
 
 
