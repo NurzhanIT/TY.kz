@@ -1,2 +1,4 @@
+from .models import Rating_number
+
 def compute_rating():
-    pass
+    all_rates = Rating_number.objects.all()
